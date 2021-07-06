@@ -3,45 +3,8 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
-  const name = "Taejin";
-  // const name = "Hanbit";
-  // const name = "Another"
-  return (
-    <View style={styles.container}>
-      {/* If Statement */}
-      <Text style={styles.text}>
-        {(() => {
-          if (name === "Hanbit") return "My name is Hanbit";
-          else if (name === "Taejin") return "My name is Taejin";
-          else return "My name is React Native";
-        })()}
-      </Text>
-
-      {/* Ternary Operator */}
-      <Text style={styles.text}>
-        {" "}
-        My name is {name === "Taejin" ? "Taejin An" : "React Native"}
-      </Text>
-
-      {/* AND Operator */}
-      {name === "Taejin" && (
-        <Text style={styles.text}> My name is Taejin </Text>
-      )}
-      {name !== "Taejin" && (
-        <Text style={styles.text}> My name is not Taejin </Text>
-      )}
-
-      {/* OR Operator */}
-      {name !== "Taejin" || (
-        <Text style={styles.text}> My name is Taejin </Text>
-      )}
-
-      {name === "Taejin" || (
-        <Text style={styles.text}> My name is not Taejin </Text>
-      )}
-      <StatusBar style="auto" />
-    </View>
-  );
+  return null; // it doesn't display anything
+  // return undefined; // it throw errors
 }
 
 const styles = StyleSheet.create({

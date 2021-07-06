@@ -15,6 +15,23 @@
 ## 특징
 
 - 여러개의 요소를 표현할 때는 반드시 하나의 부모로 감싸야 함
+- false는 렌더링 하지 않음
+- null은 허용하지만 undefined는 오류 발생
+
+  - 아무것도 표시 되지 않음
+
+    ```js
+    const App = () => {
+      return null;
+    };
+    ```
+
+  - Error 발생
+    ```js
+    const App = () => {
+      return undefined;
+    };
+    ```
 
 ## 사용
 
@@ -23,6 +40,8 @@
   ```js
   return <Text> My name is {name} </Text>;
   ```
+
+````
 
 - 조건문 사용법
 
@@ -95,3 +114,4 @@
     return <> ... </>;
   };
   ```
+````
