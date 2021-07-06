@@ -24,6 +24,54 @@
   return <Text> My name is {name} </Text>;
   ```
 
+- 조건문 사용법
+
+  - if statement: 즉시 실행 함수 형태로 작성
+
+    `(() => { })())`
+
+    ```js
+    <Text style={styles.text}>
+      {(() => {
+        if (name === "Hanbit") return "My name is Hanbit";
+        else if (name === "Taejin") return "My name is Taejin";
+        else return "My name is React Native";
+      })()}
+    </Text>
+    ```
+
+  - 삼항 연산자: 변수 사용처럼 { } 안에 연산 사용
+
+    ```js
+    <Text style={styles.text}>
+      {" "}
+      My name is {name === "Taejin" ? "Taejin An" : "React Native"}
+    </Text>
+    ```
+
+  - 논리 연산자: JSX는 false를 렌더링 하지 않는 다는 점을 이용, { } 안에 연산 사용
+
+  ```js
+  {
+    name === "Taejin" && <Text style={styles.text}> My name is Taejin </Text>;
+  }
+  {
+    name !== "Taejin" && (
+      <Text style={styles.text}> My name is not Taejin </Text>
+    );
+  }
+
+  {
+    name !== "Taejin" || <Text style={styles.text}> My name is Taejin </Text>;
+  }
+
+  {
+    name === "Taejin" || (
+      <Text style={styles.text}> My name is not Taejin </Text>
+    );
+  }
+  ```
+
 ---
 
 # Fragment Component
