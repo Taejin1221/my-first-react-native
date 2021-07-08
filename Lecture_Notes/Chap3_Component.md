@@ -141,3 +141,66 @@
 - onPress
   - 버튼이 눌렸을 때 호출되는 함수
   - TouchableWithoutFeedback Component를 상속받았기 때문에 onPress 속성 사용 가능
+
+---
+
+# Props and State
+
+- Component가 UI 뿐만 아니라 다양한 기능을 담당할 수 있도록 도와주는 기능들
+
+## Props
+
+- Properties의 줄임말
+- 부모 컴포넌트로부터 전달된 속성값 or 상속받은 속성값
+- 사용법
+
+  - props 이름으로 사용
+    - 전달
+      ```js
+      <Component propName1="value" propName2="value" />
+      ```
+    - 사용
+      ```js
+      const component = (props) => {
+        const variable = props.propName2;
+        return <Component> {props.propName1} </Component>;
+      };
+      ```
+  - Children으로 사용
+
+    - 전달
+      ```js
+      <Component> value </Component>
+      ```
+    - 사용
+      ```js
+      return <Component> {props.children} </Component>;
+      ```
+
+  - defaultProps
+    - props가 전달되지 않았을경우 defaultProps가 전달 됨
+      ```js
+      const component () => {...};
+      component.defaultProps = {
+        propName1: value,
+        propName2: value,
+      };
+      ```
+
+### propTypes
+
+- 전달받아야하는 props의 타입과 필수 여부 지정 가능
+- 사용법
+  - import
+    ```js
+    import PropTypes from "prop-types";
+    ```
+  - prop-types 지정
+    ```js
+    component.propTypes = {
+      propName1: PropTypes.string.isRequired, // string이고 필수로 전달 되어야 함
+      propName2: PropTypes.number.isRequired, // type이 number여야하고 필수로 전달되어야 함
+      propName3: PropTypes.number, // type이 number여야함
+      propName4: PropTypes.func, // type이 함수여야함
+    };
+    ```

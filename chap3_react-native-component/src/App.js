@@ -20,7 +20,11 @@ const App = () => {
       >
         My Button Component
       </Text>
-      <MyButton />
+      <MyButton title="Button" onPress={() => alert("props")} />
+      <MyButton title="Button" onPress={() => alert("children")}>
+        Children Props
+      </MyButton>
+      <MyButton onPress={() => alert("default")} />
     </View>
   );
 };

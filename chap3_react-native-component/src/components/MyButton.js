@@ -1,7 +1,8 @@
 import React from "react";
 import { TouchableOpacity, Text } from "react-native";
+import PropTypes from "prop-types";
 
-const myButton = () => {
+const myButton = (props) => {
   return (
     <TouchableOpacity
       style={{
@@ -10,7 +11,7 @@ const myButton = () => {
         margin: 10,
         borderRadius: 8,
       }}
-      onPress={() => alert("Click!!!")}
+      onPress={() => props.onPress()}
     >
       <Text
         style={{
@@ -18,10 +19,21 @@ const myButton = () => {
           fontSize: 24,
         }}
       >
-        My Button
+        {props.children || props.title}
       </Text>
     </TouchableOpacity>
   );
+};
+
+myButton.defaultProps = {
+  title: "Button",
+};
+
+myButton.propTypes = {
+  // title: PropTypes.number, // Warning 발생
+  title: PropTypes.string.isRequired,
+  // name: PropTypes.string.isRequired, // Warning 발생
+  onPress: PropTypes.func.isRequired,
 };
 
 export default myButton;
