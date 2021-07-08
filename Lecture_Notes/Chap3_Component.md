@@ -204,3 +204,34 @@
       propName4: PropTypes.func, // type이 함수여야함
     };
     ```
+
+## state
+
+- props와 달리 컴포넌트 내부에서 생성되고 값을 변경할 수 있음
+- state(상태)
+
+  - 컴포넌트에서 변화할 수 있는 값
+  - 상태가 변하면 Re-rendering 됨
+
+### useState
+
+- 함수형 컴포넌트에서 상태를 관리할 수 있도록 해줌
+- 사용법
+
+  - 기본
+
+    - 상태를 관리하는 변수, 그 변수를 변경할 수 있는 setter 함수를 배열로 반환
+      - 초깃값을 주지 않으면 undefined로 설정 (에러 발생하기 쉬움)
+      ```js
+      const [state, setState] = useState(initialState);
+      setState(state + 1);
+      ```
+    - state 여러개도 사용 가능
+
+      ```js
+      const [state1, setState1] = useState(initialState1);
+      const [state2, setState2] = useState(initialState2);
+
+      setState1(state1 + 1);
+      setState2(state2 + 2);
+      ```
