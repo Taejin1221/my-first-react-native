@@ -41,8 +41,6 @@
   return <Text> My name is {name} </Text>;
   ```
 
-````
-
 - 조건문 사용법
 
   - if statement: 즉시 실행 함수 형태로 작성
@@ -114,4 +112,17 @@
     return <> ... </>;
   };
   ```
-````
+
+---
+
+# Button Component
+
+## Property
+
+- title
+  - 버튼 내부에 출력되는 텍스트
+- onPress
+  - 버튼이 눌렸을 때 호출되는 함수
+- color
+  - IOS: 텍스트 색을 나타내는 값
+  - Android: 바탕색을 나타내는 값
