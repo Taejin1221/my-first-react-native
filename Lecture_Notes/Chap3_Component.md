@@ -89,6 +89,11 @@
   }
   ```
 
+## Custom Component 만들기
+
+- `import React from 'react'`
+  - JSX는 React.createElement를 호출하는 코드로 컴파일되므로 반드시 작성
+
 ---
 
 # Fragment Component
@@ -126,3 +131,13 @@
 - color
   - IOS: 텍스트 색을 나타내는 값
   - Android: 바탕색을 나타내는 값
+
+---
+
+# TouchableOpacity
+
+## Property
+
+- onPress
+  - 버튼이 눌렸을 때 호출되는 함수
+  - TouchableWithoutFeedback Component를 상속받았기 때문에 onPress 속성 사용 가능
